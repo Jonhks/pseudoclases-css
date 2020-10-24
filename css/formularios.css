@@ -1,0 +1,161 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --fondoPrimario: #000000;
+	--colorOscuro: #1A1E21;
+	--azulPrimario: #3860EC;
+  --azulSecundario: #2247ce;
+  --verde: #6ae44c;
+}
+
+body{
+  background-color: var(--fondoPrimario);
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.contenedor{
+  background-color: #fcf7f8;
+  max-width: 500px;
+  width: 90%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--colorOscuro);
+  text-align: center;
+}
+
+.titulo{
+  font-size: 1.3em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--colorOscuro);
+  margin-bottom: 20px;
+}
+
+
+/* Estilos del formulario */
+
+.grupo{
+  margin-bottom: 60px;
+}
+
+.formulario .grupo input{
+  height: 20px;
+  width: 100%;
+  border-radius: 3px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.formulario .grupo label{
+  display: block;
+  color: var(--colorOscuro);
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.formulario .radio input,
+.formulario .checkbox input{
+  margin-right: 10px;
+  width: auto;
+  height: auto;
+}
+
+.formulario .checkbox label {
+  margin-right: 20px;
+}
+
+button{
+	background-color: var(--azulPrimario);
+	border: none;
+	border-radius: 4px;
+  padding: 5px;
+  margin: 10px;
+}
+
+button a {
+	text-decoration: none;
+	color: white;
+}
+
+.boton{
+  width: 100%;
+  background-color: var(--azulPrimario);
+  display: inline-block;
+  padding: 25px;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: .3s ease all;
+}
+
+.boton a {
+  color: white;
+  text-decoration: none;
+}
+
+.boton:hover{
+  background-color: var(--azulSecundario);
+  cursor: pointer;
+}
+
+
+/* pseudoclases del formulario */
+
+.formulario .nombre:placeholder-shown{
+  background-color: red;
+}
+.formulario .nombre:focus{
+  border: 3px solid var(--azulPrimario);
+  background-color:  var(--colorOscuro);
+}
+
+
+.formulario .id:disabled{
+  background-color: var(--colorOscuro);
+}
+
+.formulario .correo:valid{
+  background-color: var(--verde);
+}
+
+.formulario .correo:invalid{
+  background-color: red;
+}
+
+.formulario .mensaje:required{
+  background-color: rgb(177, 177, 173);
+}
+
+
+.formulario .radio input:checked{
+  box-shadow: 0px 0px 10px 1px var(--colorOscuro);
+  width: 20px;
+  height: 20px;
+}
+/* .formulario .checkbox input:checked, */
+.formulario .checkbox input:default{
+  box-shadow: 0px 0px 10px 1px var(--verde);
+  width: 20px;
+  height: 20px;
+}
+
+
+.formulario .edad:in-range{
+  background-color: var(--verde);
+}
+
+.formulario .edad:out-of-range{
+  background-color: red;
+}
+
+
+
+

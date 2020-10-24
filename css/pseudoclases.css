@@ -1,14 +1,17 @@
 * {
 	box-sizing: border-box;
 }
-
+/* El :root seria la pseudoclase */
 :root {
+	/* fondoPrimario es la variable */
 	--fondoPrimario: #FCF7F8;
 	--colorOscuro: #1A1E21;
 	--azul: #3860EC;
+	--verde: #88eb6a;
 }
 
 body {
+	/* esta es la forma de usar una variable en css */
 	background: var(--fondoPrimario);
 	font-family: 'Roboto', sans-serif;
 	display: flex;
@@ -27,6 +30,7 @@ ul {
 	width: 90%;
 	padding: 30px;
 	border-radius: 20px;
+	text-align: center;
 }
 
 .titulo {
@@ -56,29 +60,183 @@ label {
 }
 
 /* ? ------------- PSEUDO-CLASES ------------- */
+.enlace:active{
+	background-color: black;
+}
 
+/* .enlace:hover{
+	color: orange;
+} */
+
+/* .enlace:visited{
+	color: cyan;
+} */
+
+/* .enlace:link{
+	color: blue;
+} */
 
 /* ? --- --- --- --- PARRAFOS --- --- --- --- */
 
+.parrafos :first-child{
+	background-color: var(--colorOscuro);
+	color: white;
+}
+
+.parrafos p:last-child{
+	background-color: var(--azul);
+	color: white;
+}
 
 /* ? --- --- --- --- ELEMENTOS --- --- --- --- */
+.elementos p:first-of-type{
+	background-color: var(--azul);
+	color: white;
+}
 
+.elementos .p:last-of-type{
+	background-color: var(--colorOscuro);
+	color: white;
+}
 
 /* ? --- --- --- --- LISTA --- --- --- --- */
 
+/* sirve para agarrar los impares */
+/* .lista :nth-child(odd){
+	background-color: var(--azul);
+	color: white;
+}
+
+sirve para agarrar los pares
+.lista :nth-child(even){
+	background-color: var(--colorOscuro);
+	color: white;
+} */
+
+/* agarra cada cierto numero de nodos */
+/* .lista :nth-child(2n){
+	background-color: var(--colorOscuro);
+	color: white;
+} */
+
+/* Este agarra al nodo que le pongamos de primero al ultimo */
+/* .lista :nth-child(2){
+	background-color: var(--colorOscuro);
+	color: white;
+} */
+
+/* Este agarra al nodo que le pongamos de ultimo al primero */
+/* .lista :nth-last-child(4){
+	background-color: var(--azul);
+	color: white;
+} */
+
+/* Selecciona los primero 2 hijos  */
+.lista :nth-child(-n+2){
+	/* este selecciona cada 3 iniciando del 2 */
+/* .lista :nth-child(3n+2){ */
+	background-color: var(--verde);
+	color: white;
+}
+
+/* selecciona los hijos a partir del 5 */
+/* .lista :nth-child(n+5){
+	background-color: var(--colorOscuro);
+	color: white;
+} */
+
+.lista :nth-last-child(-n+2){
+	background-color: var(--azul);
+	color: white;
+}
 
 /* ? --- --- --- --- LISTA 2 --- --- --- --- */
 
+.lista2 p:nth-of-type(2){
+	background-color: var(--azul);
+	color: white;
+}
+
+.lista2 div:nth-last-of-type(2){
+	background-color: var(--colorOscuro);
+	color: white;
+}
+
+.lista2 span:nth-last-of-type(1){
+	background-color: var(--verde);
+	color: white;
+}
 
 /* ? --- --- --- --- LISTA 3 --- --- --- --- */
-
+.lista3 :only-child{
+	background-color: var(--azul);
+	color: var(--colorOscuro);
+}
 
 /* ? --- --- --- --- LISTA 4 --- --- --- --- */
 
+.lista4 p:only-of-type{
+	background-color: var(--colorOscuro);
+	color: var(--verde);
+}
+
 /* ? --- --- --- --- AFTER y BEFORE --- --- --- --- */
+.after .ribbon{
+	background-color: cyan;
+}
+
+.ribbon:after{
+	content: "Extra con after";
+	background-color: var(--verde);
+	border-color: var(--colorOscuro);
+	border-style: dotted;
+}
+
+.before p::before{
+	content: "Lee esto =>";
+	background-color: var(--azul);
+	color: white;
+	font-weight: bold;
+}
 
 /* ? --- --- --- --- NOT --- --- --- --- */
+.not{
+	color: red;
+}
+
+.not :not(div){
+	color: var(--colorOscuro);
+}
 
 /* ? --- --- --- --- TARGET --- --- --- --- */
 
+.tab div {
+	display: none;
+}
+
+.tab div:target{
+	display: block;
+}
+
 /* ? --- --- --- --- placeholder-shown --- --- --- --- */
+
+.placeholder-shown input {
+	border: 2px solid var(--azul);
+	padding: 3px;
+}
+
+.placeholder-shown input:placeholder-shown{
+	border-color: red;
+}
+
+button{
+	background-color: var(--azul);
+	border: none;
+	border-radius: 4px;
+	padding: 5px;
+}
+
+button a {
+	text-decoration: none;
+	color: white;
+}
